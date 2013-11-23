@@ -1,0 +1,34 @@
+<%= form_for(@ticket) do |f| %>
+  <div class='well'>
+    <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
+
+      <ul>
+        <% @exam.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class='form-group'>
+      <p>Name</p>
+      <%= f.text_field :name, class: 'form-control'  %>
+    </div>
+    <div class='form-group'>
+      <p>Email</p>
+      <%= f.text_field :email, class: 'form-control'  %>
+    </div>
+    <div class='form-group'>
+      <p>Issue</p>
+      <%= f.text_area :issue, class: 'form-control' %>
+    </div>
+      <div class='actions'>
+      <%= link_to 'Back', tickets_path, class: "btn btn-default form-back" %>
+      <%= f.submit "Submit", class: 'btn btn-success' %>
+    </div>
+
+  </div>
+<% end %>
+

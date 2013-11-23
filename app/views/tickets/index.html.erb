@@ -1,0 +1,26 @@
+<h1> Ticket Support Center </h1>
+<div class="bs-example table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Ticket #</th>
+        <th>Issue</th>
+        <th>Submitted By</th>
+      </tr>
+    </thead>
+
+    <% @tickets.each do |ticket| %>
+      <tbody>
+        <tr>
+          <td><%= ticket.id %></td>
+          <td><%= ticket.issue %></td>
+          <td><%= ticket.name %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>
+
+
+<%= link_to 'New Ticket', new_ticket_path, :class => 'btn btn-primary' %>
+
