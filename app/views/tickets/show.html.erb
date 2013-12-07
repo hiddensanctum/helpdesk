@@ -1,7 +1,7 @@
 <h1>Ticket #<%= @ticket.id %></h1>
 <div class='well'>
   <p><b>Submitted By</b>: <%= @ticket.name %></p>
-  <p><b>Submitted By</b>: <%= @ticket.email %></p>
+  <p><b>Email</b>: <%= @ticket.email %></p>
   <p><b>Issue:</b></p>
   <p><%= @ticket.issue %></p>
   <%= link_to 'Back', tickets_path, :class => 'btn btn-default' %>
